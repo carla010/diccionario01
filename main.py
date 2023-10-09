@@ -1,11 +1,26 @@
+# Diccionario de traducción inglés-español
 diccionario = {
-    "vpi": "Abreviatura de Va para ahí, usado como un OK o un Dale",
-    "lol": "Puede ser usada como una abreviatura de el juego league of legends, o también como abreviatura de laughing out loud",
-    "cringe": "Algo que provoca vergüenza ajena"
+    "hello": "hola",
+    "world": "mundo",
+    "good": "bueno",
+    "morning": "mañana",
+    "night": "noche",
+    "cat": "gato",
+    "dog": "perro",
+    "tree": "árbol",
+    "computer": "computadora",
+    "friend": "amigo"
 }
-while True:
-    word = input("Introduce la palabra que quieras buscar:").lower()
-    if word in  diccionario.keys():
-        print(diccionario[word])
+
+# Función para traducir una palabra de inglés a español
+def traducir(palabra):
+    if palabra.lower() in diccionario:
+        return diccionario[palabra.lower()]
     else:
-        print("Esa palabra no está en el diccionario!")
+        return "Palabra no encontrada en el diccionario"
+
+# Traducir 10 palabras de inglés a español
+for _ in range(10):
+    palabra_ingles = input("Ingrese una palabra en inglés: ")
+    palabra_traducida = traducir(palabra_ingles)
+    print(f"{palabra_ingles.capitalize()} en español es: {palabra_traducida.capitalize()}")
